@@ -1,0 +1,44 @@
+<div *ngIf="!requestRaiseFlag" class="container-fluid">
+    <div class="row">
+      <div class="jumbotron jumbotron1 col-md-6 col-lg-6">
+      <div class="col-md-12 col-lg-12">
+      <form [formGroup]="projectForm">
+          <div class="form-group">
+              <label class="label">Name</label>
+              <input type="text" class="form-control" formControlName="name" name="name">
+            </div>
+        <div class="form-group">
+          <label class="label">Email</label>
+          <input type="email" class="form-control" formControlName="email" name="email">
+        </div>
+        <div class="form-group">
+          <label class="label">Projects</label>
+          <select class="form-control" id="project" formControlName="project">
+              <option *ngFor="let project of projectList" [value]="project">{{project}}</option>
+            </select>
+        </div>
+        <div>
+        <button type="submit" (click)=" raiseRequest()"><p class="button-text">Request Access</p></button>
+      </div>
+      </form>
+    </div>
+  </div>
+  </div>
+    </div>
+    <div *ngIf="requestRaiseFlag" class="row">
+        <div class="dialog">
+        <h3 class="dialog-title">Request Raised</h3>
+        <div class="link1">
+            <a href="/">Go to Home</a>
+            </div>
+        <div class="dialog-content">
+      <svg id="m-check-mark" width="245px" height="173px" viewBox="0 0 245 173" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.4">
+              <polyline id="checkmark" stroke="#000000" stroke-width="15" points="5.640625 83.7607422 83.2539062 161.663086 238.97168 6.11328125"></polyline>
+          </g>
+      </svg>
+      
+        </div>
+      </div>
+
+    </div>

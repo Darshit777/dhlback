@@ -1,0 +1,17 @@
+<div class="row ">
+    <table class="table-striped table-light pad col-md-8">
+        <thead>
+        <th>username</th>
+        <th>project</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of pendingRequests">
+        <td>{{user.userName}}</td>
+        <td>{{user.project}}</td>
+        <td><button class="btn btn-success" (click)="approveRequest(user)">Approve</button></td>
+        <td><button class="btn btn-success" (click)="denyRequest(user)">Deny</button></td>
+        </tr>
+        </tbody>
+        </table>
+
+</div>
